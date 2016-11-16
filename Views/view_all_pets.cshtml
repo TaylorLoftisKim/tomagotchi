@@ -1,0 +1,27 @@
+<h1>Your Pets</h1>
+@foreach(var pet in Model)
+{
+  <h3>@pet.GetName()</h3>
+  <div class="food">
+    <p>My food level is: @pet.GetFood()</p>
+    <form class="food" action="food" method="post">
+      <button type="click" name="food">Feed me!</button>
+    </form>
+  </div>
+  <div class="attention">
+    <p>My happiness level is: @pet.GetAttention()</p>
+    <form class="attention" action="attention" method="post">
+      <button type="click" name="attention">Play with me!</button>
+    </form>
+  </div>
+  <div class="sleep">
+    <p>My sleep level is: @pet.GetSleep()</p>
+    <form class="sleep" action="sleep" method="post">
+      <button type="click" name="sleep">I'm tired!</button>
+    </form>
+  </div>
+  <div class="dead">
+    <p>I died because my health is: @pet.GetDead()</p>
+  </div>
+
+}
