@@ -1,0 +1,27 @@
+<h3>@Model.GetName()</h3>
+<div class="food">
+  <p>My food level is: @Model.GetFood()</p>
+  <form class="food" action="food" method="post">
+    <button type="click" name="food">Feed me!</button>
+  </form>
+</div>
+<div class="attention">
+  <p>My happiness level is: @Model.GetAttention()</p>
+  <form class="attention" action="attention" method="post">
+    <button type="click" name="attention">Play with me!</button>
+  </form>
+</div>
+<div class="sleep">
+  <p>My sleep level is: @Model.GetSleep()</p>
+  <form class="sleep" action="sleep" method="post">
+    <button type="click" name="sleep">I'm tired!</button>
+  </form>
+</div>
+<div class="time">
+  <form class="time" action="time" method="post">
+    <button type="click" name="time">Pass Time</button>
+  </form>
+</div>
+<div class="dead">
+  <p>My health status is: @Model.GetDead()</p>
+</div>

@@ -8,15 +8,18 @@ namespace Pets.Objects
     private int _attention;
     private int _sleep;
     private int _dead;
+    private int _id;
     private static List<Pet> _instances = new List<Pet> {};
 
-    public Pet (string newName, int newFood=10, int newAttention=10, int newSleep=10, int newDead=10)
+    public Pet (string newName, int newFood=10, int newAttention=10, int newSleep=10, int newDead=1)
     {
       _name = newName;
       _food = newFood;
       _attention = newAttention;
       _sleep = newSleep;
       _dead = newDead;
+      _instances.Add(this);
+      _id = _instances.Count;
     }
     public string GetName()
     {
@@ -58,18 +61,28 @@ namespace Pets.Objects
     {
     _dead = newDead;
     }
+    public int GetId()
+    {
+      return _id;
+    }
 
     public static List<Pet> GetAll()
     {
       return _instances;
     }
-    public void Save()
-    {
-      _instances.Add(this);
-    }
     public static void ClearAll()
     {
       _instances.Clear();
+    }
+    public static Pet Find(int searchId)
+    {
+      return _instances[searchId-1];
+    }
+    public static TimePass()
+    {
+      _food -= 2;
+      _attention -= 3;
+      _sleep -= 1;
     }
   }
 }
